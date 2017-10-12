@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="鸿基-梦">
 <meta property="og:description" content="手把手教你 hexo + github搭建自己的博客以及个人主页 网上有很多这样的资料素材，但是没有一个系统化的教程 使你除了搜怎么搭建个人主页外，还要搜hexo使用教程 况且中间还可能遇到多种多样的坑 本篇文章，告诉你怎么使用github提供的空间，以及搭建自己的博客 本人亲身检测，绿色无公害； 一、环境准备 1.安装Git 下载地址：https://git-scm.com/downloads">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-09T02:08:56.610Z">
+<meta property="og:updated_time" content="2017-10-12T02:53:31.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客">
 <meta name="twitter:description" content="手把手教你 hexo + github搭建自己的博客以及个人主页 网上有很多这样的资料素材，但是没有一个系统化的教程 使你除了搜怎么搭建个人主页外，还要搜hexo使用教程 况且中间还可能遇到多种多样的坑 本篇文章，告诉你怎么使用github提供的空间，以及搭建自己的博客 本人亲身检测，绿色无公害； 一、环境准备 1.安装Git 下载地址：https://git-scm.com/downloads">
@@ -127,6 +127,13 @@
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/Blogs/categories/web/">web</a>
+                  
+              </li>
+          
         <li>
           <i class="fa fa-calendar"></i>  2017-09-29
         </li>
@@ -196,8 +203,8 @@
 <p>3.仓库分析（yourname.github.io放个人主页，Blogs存放博客）</p>
 <p>4.Blogs上传：<br>将主配置中的deploy属性添加一下代码，<br>deploy:<br>  type: git<br>  repo: 你github上的Blogs的SSH地址（注意ssh必须是系统最先生成的）<br>  branch: master</p>
 <p>运行命令行<br> hexo g 编译文件<br> hexo d 提交文件即可</p>
-<p> 4.发布博文<br> 在hexo\source_posts文件夹下新建一个MD文件类型的文档<br> 或者命令行 hexo new 博文创建<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 博文  （博文标题）</div><div class="line">date: 2017-09-27 14:49:15 （博文时间）</div><div class="line">categories: hexo <span class="comment">#文章文类</span></div><div class="line">tags: web开发技术  （ 文章标签）</div><div class="line">---</div><div class="line">这里正常写文章即可</div><div class="line"><span class="comment"># 可以理解为h1(但是#后面一定要有空格)</span></div><div class="line">``` bash（代码要写在这里面）</div><div class="line">$ console.log(<span class="string">'Hello hjm100'</span>) //这里写代码</div></pre></td></tr></table></figure></p>
-<p>```<br>注意：博文写好之后一定要先在本地查看后在提交！！！！！！</p>
+<p> 4.发布博文<br> 在hexo\source_posts文件夹下新建一个MD文件类型的文档<br> 或者命令行 hexo new 博文创建<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 博文  （博文标题）</div><div class="line">date: 2017-09-27 14:49:15 （博文时间）</div><div class="line">categories: hexo <span class="comment">#文章文类</span></div><div class="line">tags: web开发技术  （ 文章标签）</div><div class="line">cover_picture: images/exploit.jpg(图片格式)</div><div class="line">---</div><div class="line">这里正常写文章即可</div><div class="line"><span class="comment"># 可以理解为h1(但是#后面一定要有空格)</span></div><div class="line">``` bash（代码要写在这里面）</div><div class="line">$ console.log(<span class="string">'Hello hjm100'</span>) //这里写代码</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意：博文写好之后一定要先在本地查看后在提交！！！！！！</div><div class="line">  ```bash</div><div class="line">  语法：&#123;&#123;express | 过滤器名:补充说明&#125;&#125;（一定要放在bash中）</div></pre></td></tr></table></figure>
 <p>五、域名的配置（将github提供的二级域名与自己购买的域名绑定）：</p>
 <p>1.可以前往腾讯购买一个域名，一般cn域名一年就20多块钱</p>
 <p>2.点击 Github 上项目的 Settings，GitHub Pages，</p>
@@ -223,7 +230,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年10月09日 10:08</p>
+        <p>最后更新： 2017年10月12日 10:53</p>
         <p>原始链接： <a class="post-url" href="/Blogs/2017/09/29/hexo搭建博客/" title="hexo搭建博客">//hjm100.cn/Blogs/2017/09/29/hexo搭建博客/</a></p>
         <footer>
             <a href="//hjm100.cn/about">
@@ -392,10 +399,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/Blogs/categories/开发/">开发</a>
+            <a class="category-link" href="/Blogs/categories/web/">web</a><a class="category-link" href="/Blogs/categories/习惯/">习惯</a><a class="category-link" href="/Blogs/categories/学习/">学习</a><a class="category-link" href="/Blogs/categories/开发/">开发</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -434,7 +441,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
         </div>
     </div>
 </div>

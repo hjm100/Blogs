@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>angular学习总结 | 鸿基-梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="HJM100,HJM100's Blog" />
+  
+  <meta name="description" content="1.定义：Google开源的前端JS结构化框架   作用：动态展示页面数据，并与用户交互   指令：nagular定义的属性/标签/样式/注释   – ng-app(指令):告诉angular管理当前标签声明所在的整个标签都由angular来解析管理   – ng-model:将当前输入框的值与谁关联(属性名：属性值),并作为跟作用域对象($rootScope)的属性 将当前输入框的值关联到内存的">
+<meta name="keywords" content="angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular学习总结">
+<meta property="og:url" content="//hjm100.cn/Blogs/2017/10/12/angular学习总结/index.html">
+<meta property="og:site_name" content="鸿基-梦">
+<meta property="og:description" content="1.定义：Google开源的前端JS结构化框架   作用：动态展示页面数据，并与用户交互   指令：nagular定义的属性/标签/样式/注释   – ng-app(指令):告诉angular管理当前标签声明所在的整个标签都由angular来解析管理   – ng-model:将当前输入框的值与谁关联(属性名：属性值),并作为跟作用域对象($rootScope)的属性 将当前输入框的值关联到内存的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-12T02:50:11.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular学习总结">
+<meta name="twitter:description" content="1.定义：Google开源的前端JS结构化框架   作用：动态展示页面数据，并与用户交互   指令：nagular定义的属性/标签/样式/注释   – ng-app(指令):告诉angular管理当前标签声明所在的整个标签都由angular来解析管理   – ng-model:将当前输入框的值与谁关联(属性名：属性值),并作为跟作用域对象($rootScope)的属性 将当前输入框的值关联到内存的">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/Blogs/css/style.css">
+  <script src="/Blogs/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/Blogs/" class="left">
+                    <span class="site-title">HJM100&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/Blogs/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="https://gitee.com/hjm100">
+                        <i class="fa fa-archive"></i>
+                        <span>Gitee</span>
+                    </a>
+                    
+                    <a  href="https://hjm100.cn/about/">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                    <a target="_blank" href="//github.com/hjm100">
+                        <i class="fa fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/Blogs/">
+                    <img src="/Blogs/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        HJM100&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Cloud yards" target="_blank" href="//gitee.com/hjm100">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="//1254158627qq.com">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/hjm100">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5999637305">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-angular学习总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      angular学习总结
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/Blogs/categories/学习/">学习</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-10-12
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>1.定义：Google开源的前端JS结构化框架</p>
+<p>  作用：动态展示页面数据，并与用户交互</p>
+<p>  指令：nagular定义的属性/标签/样式/注释</p>
+<p>  – ng-app(指令):告诉angular管理当前标签声明所在的整个标签都由angular来解析管理</p>
+<p>  – ng-model:将当前输入框的值与谁关联(属性名：属性值),并作为跟作用域对象($rootScope)的属性</p>
+<pre><code>将当前输入框的值关联到内存的$rootScope对象的指定属性(username)上
+</code></pre><p>  – :显示数据，从作用域对象的指定属性名上取 显示作用域对象($rootScope)上的属性值上</p>
+<p>  – ng-inint: 初始化</p>
+<p>  特性：双向数据绑定、声明式依赖注入、解耦应用逻辑，数据模型和试图、完善的页面指令、定制表单验证、Ajax封装、测试更方便</p>
+<p>2.angular是支持双向数据绑定的</p>
+<p>  View(视图):页面(标签、指令、表达式)；Model(模型):作用域对象(属性、方法)；</p>
+<p>  数据绑定： 数据从一个地方流向另一个地方，数据从一个位置自动流向另一个位置</p>
+<p>  单项数据绑定：只支持一个方向;</p>
+<p>  View –&gt; Model  : ng-init</p>
+<p>  Model –&gt; View  : </p>
+<p>  双向数据绑定：</p>
+<p>  Model &lt;–&gt; View : ng-model</p>
+<p>3.作用域：是一个js实例对象</p>
+<p>  这个对象的属性、方法，页面都可以直接引用、操作</p>
+<p>  ng-app指令: 内部创建一个根作用域($rootScope),是所有其它作用域的父对象</p>
+<p>4.控制器：</p>
+<p>  也是一个对象，是我们View与Model之间的桥梁</p>
+<p>  当我们使用了ng-controller指令，内部就会创建控制器对象</p>
+<p>  但我们同时的提供控制器的构造函数(必须定义一个$scope的形参)</p>
+<p>  每定义一个ng-controller指令，内部就会创建一个新的作用域对象输入构造函数中</p>
+<p>5.依赖注入：</p>
+<p>  依赖的对象被别人(调用者)自动注入(传参)</p>
+<p>  注入的方式： 内部注入:不动态</p>
+<p>  全局变量：污染全局环境</p>
+<p>  形参： 动态  这种最好</p>
+<p>  angular就是通过声明式依赖注入，得到作用域对象</p>
+<p>  形参名不能随便定义(只是针对当前这种写法)</p>
+<p>6.模块：</p>
+<p>  也是一个对象；</p>
+<p>  创建模块对象：angular.module(‘模块名’, [依赖的模块])</p>
+<p>  通过模块添加控制器：</p>
+<pre><code>module.controller(&apos;MyController&apos;, function($scope){操作$scope的语句}
+</code></pre><p>  angular的整体设计也是多模块的</p>
+<pre><code>核心模块：angular.js
+
+扩展模块：angular-router.js angular-message.js angular-animate.js
+</code></pre><p>7.表达式：</p>
+  
+<p>  从作用域对象中读取对应的属性数据来显示数据</p>
+<p>  不支持if/for/while</p>
+<p>  支持三目表达式</p>
+<p>8.Angular指令：指令(标签、标签属性、类、注释)</p>
+<p>  Angular与Angular的Model交互，扩展页面的动态表现力</p>
+<p>  –常用的内置指令：</p>
+<pre><code>ng-app：指定模块名，angular管理的区域
+
+ng-model：双向绑定，输入相关标签（常用于input）
+
+ng-init： 初始化数据
+
+ng-click：调用作用域对象的方法(点击时)
+
+ng-controller：指定控制器构造函数名，内部会自动创建一个新的作用域(外部的)
+
+ng-bind：解决使用{{}}显示数据的闪屏(在很短时间内显示{{}})
+
+ng-repeat：遍历数组显示数据，数组有几个元素就会产生几个新的作用域(&apos;item in arr&apos;);
+
+    -- 属性： $index、$first、$last、$middle、$odd、$even
+
+ng-show：布尔类型，如果为true才会显示；false不显示隐藏
+
+ng-hide：布尔类型，如果为false才会显示；true不显示隐藏
+</code></pre><p>9.过滤器：</p>
+<p>  在显示数据时可以对数据进行格式化或过滤</p>
+<pre><code>单个--&gt;格式化(将别的类型的数据转化为特定格式的字符串)
+
+多个--&gt;过滤(内部的个数变化，但类型不变) -- 不会真正改变被操作数据
+</code></pre>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">语法：&#123;&#123;express | 过滤器名:补充说明&#125;&#125;</div></pre></td></tr></table></figure>
+<p>  –常用内置过滤器：</p>
+<pre><code>currentcy:货币格式化(文本)
+
+number：数值格式化(文本)
+
+date：将日期对象格式化(文本)
+
+json：将js对象格式化为json(文本)
+
+lowercase：将字符串格式化为全小写(文本)
+
+uppercasw：将字符串格式化为全大写(文本)
+
+limitTo：从一个数组或字符串中过滤出一个新的数组或字符串(根据下标过滤)
+
+orderBy:根据指定作用域属性对对象进行排序
+
+filter：从数组中过滤返回一个新数组(根据数据过滤)
+</code></pre><p>10.自定义过滤器：</p>
+<p>   内置过滤器有限，不能满足页面显示数据的需求</p>
+<p>   语法：</p>
+<pre><code class="bash">module.filter(<span class="string">'myLimitTo'</span>, <span class="function"><span class="title">function</span></span>(){
+  <span class="built_in">return</span> <span class="keyword">function</span>(value, startIndex, endIndex){
+    // 对value进行过滤处理，并<span class="built_in">return</span>处理的结果
+    // 不要修改value本身
+  }
+});
+</code></pre>
+<p>11.编写Angular应用的基本步骤：</p>
+<p>  – 编写基本静态页面；</p>
+<p>  – 将angular.js引入工程中，并在页面中引入</p>
+<p>  – 在页面中指定ng-app, ng-controller</p>
+<p>  – 在js中定义model和controller</p>
+<p>  – 在controller中初始化数据($scope)</p>
+<p>  – 在页面中通过表达式或指令来显示数据</p>
+<p>  – 在页面中使用ng-click添加点击监听，并定义对应的方法进行操作</p>
+<p>12.服务：</p>
+<p>  为所有(angular)的应用提供特定功能服务的对象(单例),具有特定的功能可以是Object对象、函数、数组和基本类型</p>
+<p>  Augular内置多个服务(都以$开头),在controller函数中可以声明注入服务并直接使用</p>
+<p>  也可以自定义服务，但不要以$开头  </p>
+<p>  – 常用的内置服务：</p>
+<pre><code>$rootScope与$scope（作用域）
+
+$filter（自定义）
+
+$http（数据交互）
+
+$timeout与$interval
+</code></pre><p>  当一个非angular调用的回调函数执行后，不会进行脏数据检查，即使数据变化也不会改变</p>
+<p>  显示、更新界面的基本步骤</p>
+<pre><code>1):  进行脏数据检查
+
+2):  如果有变化，就去更新对应处
+</code></pre><p>13.自定义服务：</p>
+<p>  factory():  可以自定义 对象 函数 。。。   – 最常用</p>
+<p>  service():  只能是对象</p>
+<p>  provider():</p>
+<p>  value():</p>
+<p>  constant():</p>
+<p>14.指令：（angular中最常用，用在html页面中）</p>
+<p>  内置指令：</p>
+<pre><code>ng-click:点击事件
+
+ng-blur:失去焦点
+
+$event: 事件参数
+
+ng-class: 值是一个对象 {}
+
+ng-style: 值是一个对象 {}
+
+ng-include: 动态插入一个模板页面(不是完整的html的页面，可以有表达式)
+</code></pre><p>  自定义指令：</p>
+<pre><code>module.directive(&apos;指令名&apos;, function(){})
+
+restrict : &apos;ECMA&apos;, 默认&apos;A&apos; --&gt; E(element:标签)，C(class:类)，M(mement:属性)，A(attribute:属性)
+
+template : &apos;简单的html标签&apos;,（常用）  
+
+templateUrl : &apos;包含模板标签结构的页面&apos;,--&gt;内部会通过ajax请求得到其html片段模板（常用）
+
+replace : true/false, //是否替换指令所在的标签  默认false 若为true,模板就会完全替换标签，否则是插入其标签体（常用）
+
+scope: （常用）
+
+使用什么作用域，默认为false，直接使用外部作用域作为当前作用域
+
+如果为true,代表创建一个作用域继承自外部作用域
+
+如果是{},代表创建一个隔离作用域，不从外部作用域继承
+
+--&gt; {}  隔离作用域的绑定策略： 
+
+  1.基于字符串的绑定  使用  &quot;@&quot;  操作符，绑定的是指定标签属性的字符串
+
+  2.基于变量的绑定，使用  &quot;=&quot;  操作符，绑定的是外部作用域的变量
+
+  3.基于方法的绑定，使用  &quot;&amp;&quot;  操作符，绑定的是外部作用域的方法  
+
+transclude:嵌入转换，默认false;  如果为true,需要与作用域和ng-transclude指令配合使用（常用）
+
+controller:引用某个Controller或定义一个新的controller（常用）
+
+  --&gt;function($scope, $element, $attrs, $transclude)  
+
+compile:指定编译期执行的函数； 对模板DOM进行处理
+
+``` bash
+  --&gt;function(){
+    return  pre:function preLink(scope, element, attributes){...}
+    post:function postLink(scope, element, attributes){...}  可以覆盖link的显示
+  }   
+link :  指定链接期执行的函数； 将作用域和DOM进行链接（常用）
+  --&gt;function(scope, elements,attrs,contrller){
+    // scope是作用域的对象，通过它可以操作该作用域中的所欲的属性和方法
+  }
+require: 指定一个指令的名称（常用）
+  &quot;^xxx&quot;: 查找外部指令的控制器
+  &quot;?xxx&quot;: 在当前指令中查找控制器，如果没有为null
+  &quot;xxx&quot;: 在当前标签中查找指令的控制器注入到当前指令的link函数中
+  &quot;?^xxx&quot;: 两种情况都会查找
+priority: 优先级，默认是0，最大是1000  优先级高的指令总是优先解析执行； 
+  --&gt;   ng-repeat的优先级是最高的
+terminal: 是否终止优先级较低的指令执行，默认是false
+})
+</code></pre><pre><code>15.依赖注入(DI: Dependency Injection)：依赖的对象被自动注入进来   
+
+  依赖对象：完成特定功能的函数需要某个对象才能实现, 这个对象就是依赖对象
+
+  引入依赖对象：
+
+    方式一: 内部自己创建 : 不动态
+
+    方式二: 全局变量 : 污染全局命名空间
+
+    方式三: 形参引入依赖 : 依赖注入使用的方式
+
+  定义：
+
+    1). 定义函数时, 使用形参声明依赖对象变量, 在函数体中使用依赖对象(我们实现)
+
+    2). 函数调用时, 自动将创建好的依赖对象动态传入(框架实现)
+
+    3). 例子: 事件监听就使用了依赖注入, event就是依赖对象(event可以是任意名称)
+
+  angular的依赖引入：形参必须是特定的名称, 否则Angular无法注入抛异常
+
+16.$apply和$watch方法：
+
+  $apply():
+
+    1). 当scope中的数据发生了改变, angular会将数据同步显示到页面, 这一操作称为&quot;脏数据检查&quot;
+
+    2). angular在它的方法执行完后, 都会进行脏数据检查,
+
+    3). 在原生JS函数中改变作用域数据, angular是不会进行脏数据检查的
+
+    4). 使用$scope的$apply函数可以解决此问题
+
+      $scope.$apply(function(){
+      //在这里更新scope数据, angular会同步更新其页面数据
+      });
+
+    5). $apply()的本质是调用$digest()去进行脏数据检查更新页面的
+
+    $scope.$digest()
+
+    6). $apply()虽然也能实现页面更新, 但建议使用$apply()
+
+  $watch():
+
+    1). angular是双向数据绑定的, Scope中的属性数据发生了改变, 会自动更新页面中对应的数据
+
+    2). 但有时, 我们想监视数据的变化情况, 来实现特定的功能
+
+    3). Angular提供了$watch()来实现
+
+    var unWatch = $scope.$watch(&apos;propertyName&apos;, function(newValue, oldValue){}, deepWatch)
+
+    参数一: 指定监视属性的属性名
+
+    参数二: 发现数据发生改变时的回调函数
+
+    参数三: 是否深度监视, 默认是false, 代表只是监视属性本身, 而不监视其内部数据
+
+    返回值: 用于取消监视的函数, 调用unWatch()取消监视
+
+17.视图和路由
+
+  SPA:(simple page application) 单页应用
+
+  对单页应用来讲，视图和路由的作用可以从一个视图跳转到另外一个视图,可以合理管理用户在使用过程中看到的界面
+
+  -- 引入：将angular-route.js添加到项目中--&gt;在页面中引入此文件--&gt;创建应用module时加载此模块
+
+  -- 实例：
+
+  主页面：
+
+   ``` bash
+    &lt;div ng-controller=&quot;MyController&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#/a&quot;&gt;click a&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#/b&quot;&gt;click b&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ng-view&gt;&lt;/ng-view&gt;
+    &lt;/div&gt;
+</code></pre><p>  模板页面a:</p>
+<pre><code class="bash">&lt;div style=<span class="string">"height:500px;width:100%;background-color:green;"</span>&gt;{{hello}}&lt;/div&gt;
+</code></pre>
+<p>  模板页面b: </p>
+<pre><code class="bash">&lt;div style=<span class="string">"height:2500px;width:100%;background-color:blue;"</span>&gt;{{hello}}&lt;/div&gt;
+</code></pre>
+<p>  JS实现：</p>
+<pre><code class="bash">angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngRoute'</span>])
+.config(<span class="keyword">function</span> (<span class="variable">$routeProvider</span>) {
+<span class="variable">$routeProvider</span>
+  .when(<span class="string">'/a'</span>, {
+    templateUrl : <span class="string">'a.html'</span>, //加载指定template页面替换 &lt;ng-View&gt;
+    controller : <span class="string">'AController'</span>
+  })
+  .when(<span class="string">'/b'</span>, {
+    templateUrl : <span class="string">'b.html'</span>,
+    controller : <span class="string">'BController'</span>
+  })
+  .otherwise({
+    redirectTo : <span class="string">'/a'</span>
+  });
+})
+.controller(<span class="string">'AController'</span>, <span class="keyword">function</span> (<span class="variable">$scope</span>) {
+  <span class="variable">$scope</span>.hello = <span class="string">"this is a.html"</span>;
+})
+.controller(<span class="string">'BController'</span>, <span class="keyword">function</span> (<span class="variable">$scope</span>) {
+  <span class="variable">$scope</span>.hello = <span class="string">"this is b.html"</span>;
+})
+.controller(<span class="string">'MyController'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>){
+  //<span class="variable">$scope</span>.hello = <span class="string">"this is xxx.html"</span>;
+});
+</code></pre>
+<p>18.表单验证：</p>
+<p>  使用angular-messages扩展库</p>
+<p>  安装Chorme插件：AngularJS Baterarang  可以查看作用域对象中的属性变化情况</p>
+<p>  表单：当前$scope下会有对应的属性对象, 属性名为form的name属性</p>
+<p>  表单对象包含以下重要属性:</p>
+<pre><code>1). $dirty : 表示用户是否输入过数据, 初始值为false, 一旦用户输入数据就会为true
+
+2). $valid : 表示整个表单是否是合法的, 一旦有一个表单项不合法,就会为false
+
+3). $invalid : 与$valide值相反        
+
+4). 表单项属性: 保存表单项的验证相关信息
+</code></pre><p>  表单项：form属性对象下有对应的属性对象, 属性名为表单项的name属性，表单项对象包含以下重要属性</p>
+<pre><code>1). $dirty : 表示用户是否输入过数据, 初始值为false, 一旦用户输入数据就会为true
+
+2). $valid : 表示整个表单是否是合法的, 一旦有一个表单项不合法,就会为false
+
+3). $invalid : 与$valide值相反
+
+4). $error : 包含错误名称的对象, 属性名为特定的验证名称, 值为true: {require : true}
+</code></pre><p>  编码：</p>
+<p>  在表单字段上定义验证指令： </p>
+<pre><code>ng-required = &quot;true&quot; 必填项； ng-minlength ng-maxlength
+
+ng-pattern=&quot;/^[a-zA-Z]$/&quot;  type=&quot;email/url&quot;      min max
+</code></pre><p>  提示信息：</p>
+<pre><code>ng-messages: 读取表单项中的$error对象  ng-messages=&quot;nameForm.username.$error&quot;
+
+ng-message: 读取$error对象中验证名称属性，如果为true才会显示当前标签  ng-message=&quot;minlength&quot;
+
+ng-show: 控制包含提示信息的标签是否显示 ng-show=&quot;nameForm.username.$dirty&amp;&amp;nameForm.username.$invalid&quot;
+
+ng-bind: 指定提示信息文本字符串 ng-bind=&quot;字符串最少为4&quot;
+
+ng-class: 避免出现红色提示区域闪烁的情况 ng-class=&quot;&apos;alert alert-danger help-block&apos;&quot;
+</code></pre><p>  实例：</p>
+<pre><code class="bash">&lt;div ng-show=<span class="string">"myForm.username.<span class="variable">$dirty</span>&amp;&amp;myForm.username.<span class="variable">$invalid</span>"</span> ng-messages=<span class="string">"myForm.username.<span class="variable">$error</span>"</span> class=<span class="string">"alert alert-danger help-block"</span>&gt;
+  &lt;span ng-message=<span class="string">"required"</span> ng-bind=<span class="string">"'必填项'"</span>&gt;&lt;/span&gt;
+  &lt;span ng-message=<span class="string">"minlength"</span> ng-bind=<span class="string">"'字符太短小于4'"</span>&gt;&lt;/span&gt;
+  &lt;span ng-message=<span class="string">"pattern"</span> ng-bind=<span class="string">"'开头必须是字母'"</span>&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<p>19.MVC与MVVM:</p>
+<p>  通用：</p>
+<pre><code>模型Model: 存储数据的实体模型，操作数据的业务模型
+
+视图View: 显示数据，响应用户操作，与用户进行交互
+
+控制器Controller:操作模型数据，更新视图，View与Model之间的桥梁
+</code></pre><p>  angular中的MVC:</p>
+<pre><code>模型Model: scope 存储数据的容器 提供操作数据的方法
+
+视图View: html/css/directive/expression 显示Model的数据，将数据同步到Model 与用户交互
+
+控制器Controller： controller 初始化Ｍodel的数据  为Model添加行为方法 
+</code></pre><p>  MVVM： View &lt;–&gt; ViewModel &lt;–&gt; Model</p>
+<p>  MVVM是MVC的进化版，Angular使用的是MVVM  双向数据绑定</p>
+<hr>
+<p>备注：如有错误与不全面的地方希望大牛补充，谢谢！！！！！！</p>
+<p>更多内容请访问：<br>angular中的自定义过滤器使用：<a href="http://git.oschina.net/hjm100/codes/nr9vfgxh3tzajiswl6omd34" target="_blank" rel="external">http://git.oschina.net/hjm100/codes/nr9vfgxh3tzajiswl6omd34</a></p>
+<p>angular中的服务使用：<a href="http://git.oschina.net/hjm100/codes/6scz41ryv9xf70gtbowkh50" target="_blank" rel="external">http://git.oschina.net/hjm100/codes/6scz41ryv9xf70gtbowkh50</a></p>
+<p>angular总结学习：<a href="http://git.oschina.net/hjm100/codes/uohp5vsbljqyr1298eixn92" target="_blank" rel="external">http://git.oschina.net/hjm100/codes/uohp5vsbljqyr1298eixn92</a></p>
+<p>angular中的tab切换：<a href="http://git.oschina.net/hjm100/codes/q1csxnui6thoda8melzjf29" target="_blank" rel="external">http://git.oschina.net/hjm100/codes/q1csxnui6thoda8melzjf29</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年10月12日 10:50</p>
+        <p>原始链接： <a class="post-url" href="/Blogs/2017/10/12/angular学习总结/" title="angular学习总结">//hjm100.cn/Blogs/2017/10/12/angular学习总结/</a></p>
+        <footer>
+            <a href="//hjm100.cn/about">
+                <img src="/Blogs/images/logo.jpg" alt="hjm100">
+                hjm100
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=//hjm100.cn/Blogs/2017/10/12/angular学习总结/&title=《angular学习总结》 — 鸿基-梦&pic=//hjm100.cn/Blogsimages/logo.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=//hjm100.cn/Blogs/2017/10/12/angular学习总结/&title=《angular学习总结》 — 鸿基-梦&source=前端博客,鸿基梦,hjm100," data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=//hjm100.cn/Blogs/2017/10/12/angular学习总结/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular学习总结》 — 鸿基-梦&url=//hjm100.cn/Blogs/2017/10/12/angular学习总结/&via=//hjm100.cn/Blogs" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=//hjm100.cn/Blogs/2017/10/12/angular学习总结/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=//hjm100.cn/Blogs/2017/10/12/angular学习总结/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/Blogs/tags/angular/" class="color3">angular</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/Blogs/2017/10/11/开发操作小妙招/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">开发操作小妙招</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <section id="comments">
+            <div id="disqus_thread">
+                <script type="text/javascript">
+                    var disqus_shortname = 'true';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>&copy; 2017 hjm100
+          .版权所有 | 相关设计 <a href="https://gitee.com/hjm100" target="_blank">鸿基梦</a><br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "//hjm100.cn/Blogs",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/Blogs/categories/web/">web</a><a class="category-link" href="/Blogs/categories/习惯/">习惯</a><a class="category-link" href="/Blogs/categories/学习/">学习</a><a class="category-link" href="/Blogs/categories/开发/">开发</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/Blogs/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://gitee.com/hjm100">
+                    <i class="fa fa-archive"></i><span>Gitee</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://hjm100.cn/about/">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="//github.com/hjm100">
+                    <i class="fa fa-github"></i><span>Github</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 20px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/Blogs/js/search.js"></script>
+<script src="/Blogs/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/Blogs/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/Blogs/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
