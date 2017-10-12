@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开发操作小妙招 | 鸿基-梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="HJM100,HJM100's Blog" />
+  
+  <meta name="description" content="1.删除node_modules包npm install rimraf -grimraf node_modules也可以使用：    直接删除    rm -f node_modules    需要确认是否删除：    rm -i node_modules 2..https与http的区别：   https是http的安全版，即http下加入SSL层，https的安全基础是SSL层， 3.anyw">
+<meta name="keywords" content="开发技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发操作小妙招">
+<meta property="og:url" content="//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/index.html">
+<meta property="og:site_name" content="鸿基-梦">
+<meta property="og:description" content="1.删除node_modules包npm install rimraf -grimraf node_modules也可以使用：    直接删除    rm -f node_modules    需要确认是否删除：    rm -i node_modules 2..https与http的区别：   https是http的安全版，即http下加入SSL层，https的安全基础是SSL层， 3.anyw">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-12T09:11:45.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发操作小妙招">
+<meta name="twitter:description" content="1.删除node_modules包npm install rimraf -grimraf node_modules也可以使用：    直接删除    rm -f node_modules    需要确认是否删除：    rm -i node_modules 2..https与http的区别：   https是http的安全版，即http下加入SSL层，https的安全基础是SSL层， 3.anyw">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/Blogs/css/style.css">
+  <script src="/Blogs/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/Blogs/" class="left">
+                    <span class="site-title">HJM100&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/Blogs/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="https://gitee.com/hjm100">
+                        <i class="fa fa-archive"></i>
+                        <span>Gitee</span>
+                    </a>
+                    
+                    <a  href="https://hjm100.cn/about/">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                    <a target="_blank" href="//github.com/hjm100">
+                        <i class="fa fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/Blogs/">
+                    <img src="/Blogs/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        HJM100&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Cloud yards" target="_blank" href="//gitee.com/hjm100">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="//1254158627qq.com">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/hjm100">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5999637305">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-开发操作小妙招" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      开发操作小妙招
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/Blogs/categories/开发/">开发</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-10-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>1.删除node_modules包<br>npm install rimraf -g<br>rimraf node_modules<br>也可以使用：<br>    直接删除<br>    rm -f node_modules<br>    需要确认是否删除：<br>    rm -i node_modules</p>
+<p>2..https与http的区别：<br>   https是http的安全版，即http下加入SSL层，https的安全基础是SSL层，</p>
+<p>3.anywhere 随启随用的静态文件服务器<br>使用前需要先安装：npm install anywhere -g<br>然后在目标文件夹执行git命令行：anywhere<br>认不添加 -s 命令会在命令敲击后，同时打开浏览器访问 <a href="http://localhost:8000/" target="_blank" rel="external">http://localhost:8000/</a> 这个路径。<br>anywhere -p 8000 ## 指定静态服务器的端口号<br>anywhere -s ## 静默执行，不打开浏览器 </p>
+<p>4.开发过程中的谷歌卡发工具样式妙招<br>针对色值选择，可以在style中输入后点击颜色图标可以出现色值选择表<br>可以微调的，可以使用吸管吸取网页中的其它区域颜色，与ColorCop用法一样（好用）</p>
+<p>5.开发过程中需要看很多外国文档，比如angular需要你的浏览器越狱，推荐一个<br>越狱软件蓝灯：下载地址<br>链接：<a href="http://pan.baidu.com/s/1boYpxCz" target="_blank" rel="external">http://pan.baidu.com/s/1boYpxCz</a> 密码：rn6q</p>
+<p>6.清楚浏览器缓存的快捷方法<br>1.ctrl+shift+N.即可无痕浏览网页了！<br>2.ctrl+H快速打开历史记录<br>3.清除Google浏览器缓存的快捷键 Ctrl+Shift+Del</p>
+<hr>
+<p>rm命令详解（附加文档）<br>rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。<br>对于链接文件，只是删除整个链接文件，而原有文件保持不变。<br>注意：使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。<br>所以，在删除文件之前，最好再看一下文件的内容，确定是否真要删除。<br>rm命令可以用-i选项，这个选项在使用文件扩展名字符删除多个文件时特别有用。<br>使用这个选项，系统会要求你逐一确定是否要删除。<br>这时，必须输入y并按Enter键，才能删除文件。如果仅按Enter键或其他字符，文件不会被删除。<br>语法<br>  rm (选项)(参数)<br>选项<br>-d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；<br>-f：强制删除文件或目录；<br>-i：删除已有文件或目录之前先询问用户；<br>-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；<br>–preserve-root：不对根目录进行递归操作；<br>-v：显示指令的详细执行过程。<br>参数<br>文件：指定被删除的文件列表，如果参数中含有目录，则必须加上-r或者-R选项。<br>实例<br>交互式删除当前目录下的文件test和example<br>rm -i test example<br>Remove test ?n（不删除文件test)<br>Remove example ?y（删除文件example)<br>删除当前目录下除隐含文件外的所有文件和子目录 </p>
+<h1 id="rm-r"><a href="#rm-r" class="headerlink" title="rm -r *"></a>rm -r *</h1><p>应注意，这样做是非常危险的!</p>
+<p>以上博文出处：<a href="http://man.linuxde.net/rm（感谢博主分享）" target="_blank" rel="external">http://man.linuxde.net/rm（感谢博主分享）</a></p>
+<hr>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年10月12日 17:11</p>
+        <p>原始链接： <a class="post-url" href="/Blogs/2017/10/11/开发操作小妙招/" title="开发操作小妙招">//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/</a></p>
+        <footer>
+            <a href="//hjm100.cn/about">
+                <img src="/Blogs/images/logo.jpg" alt="hjm100">
+                hjm100
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/&title=《开发操作小妙招》 — 鸿基-梦&pic=images/exploit.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/&title=《开发操作小妙招》 — 鸿基-梦&source=前端博客,鸿基梦,hjm100," data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《开发操作小妙招》 — 鸿基-梦&url=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/&via=//hjm100.cn/Blogs" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=//hjm100.cn/Blogs/2017/10/11/开发操作小妙招/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/Blogs/tags/开发技术/" class="color5">开发技术</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#rm-r"><span class="post-toc-text">rm -r *</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/Blogs/2017/10/12/angular学习总结/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          angular学习总结
+        
+      </span>
+    </a>
+  
+  
+    <a href="/Blogs/2017/10/09/工作日常习惯/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">工作日常习惯</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <section id="comments">
+            <div id="disqus_thread">
+                <script type="text/javascript">
+                    var disqus_shortname = 'true';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>&copy; 2017 hjm100
+          .版权所有 | 相关设计 <a href="https://gitee.com/hjm100" target="_blank">鸿基梦</a><br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "//hjm100.cn/Blogs",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/Blogs/categories/web/">web</a><a class="category-link" href="/Blogs/categories/习惯/">习惯</a><a class="category-link" href="/Blogs/categories/学习/">学习</a><a class="category-link" href="/Blogs/categories/开发/">开发</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 15px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/Blogs/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://gitee.com/hjm100">
+                    <i class="fa fa-archive"></i><span>Gitee</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://hjm100.cn/about/">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="//github.com/hjm100">
+                    <i class="fa fa-github"></i><span>Github</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 15px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 10px;">开发技术</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/Blogs/js/search.js"></script>
+<script src="/Blogs/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/Blogs/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/Blogs/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
