@@ -322,12 +322,7 @@ Custom domain下面的对话框填写你的域名即可
 
 至此你的博客已经搭建完毕了，不要感谢我，本人博客预览hjm100.cn 
 
-
-
-
 域名https添加（让你的域名更加安全）
-
-
 
 第一步首先注册一个属于自己的域名，可以选择cn域名，不贵一年就20多元
 我的域名是hjm100.cn
@@ -345,5 +340,43 @@ Add a website对话框，再次填写hjm100.cn(你的域名)点击scan DNS Recor
 4.添加DNS Records 
 typt:CNAME类型 name：www Value:
 
+附件小妙招：
 
+怎么换一台电脑仍然可以使用hexo（亲测有用）
 
+1.在Blogs这个项目中创建hexo分支用来储存开发环境（master分支用来存储生成的静态资源）
+
+git branch hexo（新建一个hexo分支）
+
+2.将hexo分支发布在github上(这个时候分支中可能有master分支的文件)
+
+git push origin hexo(将代码提交到hexo分支上)
+
+3.切换到hexo分支上（如果有文件就清空分支中的内容除了.git文件）
+
+git checkout hexo（切换到hexo分支上）
+
+4.整理你的开发环境hexo,修改hexo下面的.gitignore(限制git上传)文件
+
+``` bash
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+```
+5.删除themes-->miho文件中的 .git文件以及.gitignore
+
+6.将你上述修改的hexo文件提交到hexo分支里面（不要改错奥）
+在hexo分之下即可
+git add .
+git commit .
+git push origin hexo
+
+7.当你换电脑的时候，配置公钥以及全局安装npm install -g hexo（请参考以上说明）
+下载的分支默认显示的是master分支，请切换到hexo分支，
+cd hexo（进入到hexo文件）执行npm install 安装node模块，按照以上写博客提交博客即可同步
+
+8.切结，修改过hexo文件中的内容后记得提交hexo分支，以免你再次换电脑的时候使用
+
+建议使用最新的git版本以及Node版本，如有问题请留言！！！！
