@@ -6,9 +6,9 @@ categories: web
 tags: webpack打包
 ---
 
-# webpack打包笔记（一）（相关概念总结）：
+### webpack打包笔记--相关概念总结
 
-## 1.基本概念理解：
+### 1.基本概念理解：
 webpack打包文件命名：webpack.config.js
 ### 入口  （entry）
 
@@ -277,8 +277,8 @@ module.exports = [ serverConfig, clientConfig ];
 
 ```
 
-# 持续更新中（错误指正，新概念补充）
+#### 持续更新中（错误指正，新概念补充）
 
-## 参考来源：https://doc.webpack-china.org/
+#### 参考来源：https://doc.webpack-china.org/
 
-## webpack打包笔记（二）（实战练习）
+#### webpack打包笔记（二）（实战练习）
