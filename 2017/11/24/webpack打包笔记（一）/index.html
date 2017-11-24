@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webpack打包笔记（一） | 鸿基-梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="HJM100,HJM100's Blog" />
+  
+  <meta name="description" content="webpack打包笔记（一）（相关概念总结）：1.基本概念理解：webpack打包文件命名：webpack.config.js 入口  （entry）入口告诉webpack工作的起点（你要告诉webpack从那个文件开始，进入入口起点后webpack会逐步打包与之有关联的文件） 简单例子：12345678910111213141516171819202122232425262728const co">
+<meta name="keywords" content="webpack打包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack打包笔记（一）">
+<meta property="og:url" content="//hjm100.cn/Blogs/2017/11/24/webpack打包笔记（一）/index.html">
+<meta property="og:site_name" content="鸿基-梦">
+<meta property="og:description" content="webpack打包笔记（一）（相关概念总结）：1.基本概念理解：webpack打包文件命名：webpack.config.js 入口  （entry）入口告诉webpack工作的起点（你要告诉webpack从那个文件开始，进入入口起点后webpack会逐步打包与之有关联的文件） 简单例子：12345678910111213141516171819202122232425262728const co">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-24T03:22:29.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack打包笔记（一）">
+<meta name="twitter:description" content="webpack打包笔记（一）（相关概念总结）：1.基本概念理解：webpack打包文件命名：webpack.config.js 入口  （entry）入口告诉webpack工作的起点（你要告诉webpack从那个文件开始，进入入口起点后webpack会逐步打包与之有关联的文件） 简单例子：12345678910111213141516171819202122232425262728const co">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/Blogs/css/style.css">
+  <script src="/Blogs/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/Blogs/" class="left">
+                    <span class="site-title">HJM100&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/Blogs/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="https://gitee.com/hjm100">
+                        <i class="fa fa-archive"></i>
+                        <span>Gitee</span>
+                    </a>
+                    
+                    <a  href="https://hjm100.cn/about/">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                    <a target="_blank" href="//github.com/hjm100">
+                        <i class="fa fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/Blogs/">
+                    <img src="/Blogs/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        HJM100&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Cloud yards" target="_blank" href="//gitee.com/hjm100">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="//1254158627qq.com">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/hjm100">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5999637305">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-webpack打包笔记（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      webpack打包笔记（一）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/Blogs/categories/web/">web</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-24
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="webpack打包笔记（一）（相关概念总结）："><a href="#webpack打包笔记（一）（相关概念总结）：" class="headerlink" title="webpack打包笔记（一）（相关概念总结）："></a>webpack打包笔记（一）（相关概念总结）：</h1><h2 id="1-基本概念理解："><a href="#1-基本概念理解：" class="headerlink" title="1.基本概念理解："></a>1.基本概念理解：</h2><p>webpack打包文件命名：webpack.config.js</p>
+<h3 id="入口-（entry）"><a href="#入口-（entry）" class="headerlink" title="入口  （entry）"></a>入口  （entry）</h3><p>入口告诉webpack工作的起点（你要告诉webpack从那个文件开始，进入入口起点后webpack会逐步打包与之有关联的文件）</p>
+<p>简单例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">const config = &#123;</div><div class="line">  entry:<span class="string">'./main.js'</span> //打包的入口文件是main.js</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = config;</div><div class="line"></div><div class="line">//向entry传入一个数组时，将创建多个主入口</div><div class="line">entry:[<span class="string">'./entry1'</span>,<span class="string">'./entry2'</span>]</div><div class="line">``` </div><div class="line"><span class="comment">### 深入入口</span></div><div class="line"></div><div class="line">用法：entry: string|Array&lt;string&gt;</div><div class="line"></div><div class="line">对象语法：(可以根据键值使用：常用于多页面)</div><div class="line">用法：entry: &#123;[entryChunkName: string]: string|Array&lt;string&gt;&#125;</div><div class="line"></div><div class="line">用例：</div><div class="line">```bash</div><div class="line">//分离 应用程序(app) 和 第三方库(vendor) 入口</div><div class="line">const config = &#123;</div><div class="line">  entry: &#123;</div><div class="line">    app: <span class="string">'./src/app.js'</span>,</div><div class="line">    vendors: <span class="string">'./src/vendors.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//这两个依赖图是完全分离的，相互独立的，这种方式常用于只有一个入口文件的单页应用中</div></pre></td></tr></table></figure></p>
+<p>多页面应用程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">const config = &#123;</div><div class="line">  entry: &#123;</div><div class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</div><div class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</div><div class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这是三个独立分离的依赖图</p>
+<p>根据经验：每个 HTML 文档只使用一个入口起点。</p>
+<h3 id="输出-（output）"><a href="#输出-（output）" class="headerlink" title="输出  （output）"></a>输出  （output）</h3><p>出口告诉webpack在哪里输出打包的内容，以及如何命名这些打包的文件，你可以通过在配置中指定一个output字段来配置处理过程</p>
+<p>简单例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//path模块是路径的兼容写法（兼容windows 与linux）</div><div class="line">const path = require(<span class="string">'path'</span>)</div><div class="line">const config = &#123;</div><div class="line">    entry:<span class="string">'./main.js'</span> //打包的入口文件是main.js</div><div class="line">    output:&#123;</div><div class="line">        path:path.resolve(__dirname,<span class="string">'dist'</span>),  //目标输出目录 path 的绝对路径。</div><div class="line">        filename:<span class="string">'bundle.js'</span>                  //用于输出文件的文件名。</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//此配置将一个单独的 bundle.js 文件输出到 /home/proj/public/assets 目录中</div><div class="line"></div><div class="line">module.exports = config;</div><div class="line"></div><div class="line">//上面例子我们通过output.path与output.filename来告诉webpack 打包的名称</div><div class="line">//以及我们想要将文件打包到哪里去</div></pre></td></tr></table></figure>
+<h3 id="深入输出"><a href="#深入输出" class="headerlink" title="深入输出"></a>深入输出</h3><p>多个入口起点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">  filename: <span class="string">'[name].js'</span>, //自动匹配</div><div class="line">  path: __dirname + <span class="string">'/dist'</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="加载器（loader）"><a href="#加载器（loader）" class="headerlink" title="加载器（loader）"></a>加载器（loader）</h3><p>加载器告诉webpack去处理那些非js文件，（webpack只理解js）,loader能够将有类型的文件转换成webpack能够处理的有效模块。</p>
+<p>loader有两个目标</p>
+<p>1.识别出应该被对应的loader转化的那些文件（test属性）</p>
+<p>2.转换这些文件，使其能够添加到依赖图中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">const path = require(<span class="string">'path'</span>);</div><div class="line"></div><div class="line">const config = &#123;</div><div class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    filename: <span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123; <span class="built_in">test</span>: /\.txt$/, use: <span class="string">'raw-loader'</span> &#125; //使用 raw-loader模块处理txt文件</div><div class="line">      &#123;</div><div class="line">        <span class="built_in">test</span>: /\.css$/,   </div><div class="line">        use: [</div><div class="line">          &#123; loader: <span class="string">'style-loader'</span> &#125;, //对 .css 文件使用 style-loader 和 css-loader</div><div class="line">          &#123;</div><div class="line">            loader: <span class="string">'css-loader'</span>,</div><div class="line">            options: &#123;               //启动/禁用 CSS 模块</div><div class="line">              modules: <span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// /\.txt$/正则表达式:匹配以 .txt 结尾的文件</div><div class="line"></div><div class="line">module.exports = config;</div><div class="line"></div><div class="line">//解析：当webpack碰到.txt路径的时候，在打包之前先使用raw-loader转换一下</div><div class="line">//注意：在配置loader的时候需要定义在module.rules中，而不是rules中，</div><div class="line">//定义出错的时候webpack会给出严重的警告</div></pre></td></tr></table></figure>
+<h3 id="深入加载器"><a href="#深入加载器" class="headerlink" title="深入加载器"></a>深入加载器</h3><p>loader 可以使你在 import 或”加载”模块时预处理文件</p>
+<p>使用加载器的时候往往伴随着安装npm包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">常见的加载器 (使用的时候可以去webpack官网寻找自己想要使用的模块即可)：</div><div class="line"></div><div class="line">npm install --save-dev css-loader //加载 CSS 文件</div><div class="line">npm install --save-dev ts-loader //将 TypeScript 转为 JavaScript</div><div class="line">npm install --save-dev raw-loader //加载 txt 文件</div><div class="line"></div><div class="line">更多的加载器不一一赘述</div><div class="line">vue-loader   //转换vue文件</div><div class="line">html-loader  //加载html（一般需要配合file-loader或url-loader）使用</div><div class="line">babel-loader //允许使用Babel和webpack来转换JavaScript文件。</div><div class="line">url-loader   //加载文件作为base64编码的URL</div><div class="line">file-loader  //生成的文件的文件名就是文件内容的 MD5 哈希值并会保留所引用资源的原始扩展名。</div></pre></td></tr></table></figure>
+<p>module.rules 允许你在 webpack 配置中指定多个 loader。</p>
+<h3 id="插件-（plugins）"><a href="#插件-（plugins）" class="headerlink" title="插件  （plugins）"></a>插件  （plugins）</h3><p>插件告诉webpack可以用于执行范围广的任务，从打包到优化一直到重新定义环境变量，</p>
+<p>插件能够处理各种各样的任务</p>
+<p>插件定义在 plugins数组中通过New操作符来创建一个插件实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">const HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>); // 通过 npm 安装</div><div class="line">const webpack = require(<span class="string">'webpack'</span>); // 用于访问内置插件</div><div class="line">const path = require(<span class="string">'path'</span>);</div><div class="line"></div><div class="line">const config = &#123;</div><div class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123; <span class="built_in">test</span>: /\.txt$/, use: <span class="string">'raw-loader'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new webpack.optimize.UglifyJsPlugin(),</div><div class="line">    new HtmlWebpackPlugin(&#123;template: <span class="string">'./src/index.html'</span>&#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line">module.exports = config;</div></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p> webpack 配置是标准的 Node.js CommonJS 模块，你可以做到以下事情：</p>
+<p>1 通过 require(…) 导入其他文件</p>
+<p>2 通过 require(…) 使用 npm 的工具函数</p>
+<p>3 使用 JavaScript 控制流表达式，例如 ?: 操作符</p>
+<p>4 对常用值使用常量或变量</p>
+<p>5 编写并执行函数来生成部分配置</p>
+<p>###模块</p>
+<p>对比 Node.js 模块，webpack 模块能够以各种方式表达它们的依赖关系</p>
+<p>1 ES2015 import 语句</p>
+<p>2 CommonJS require() 语句</p>
+<p>3 AMD define 和 require 语句</p>
+<p>4 css/sass/less 文件中的 @import 语句。</p>
+<p>5 样式(url(…))或 HTML 文件(<img src="">)中的图片链接(image url)</p>
+<p>webpack 提供了可定制的、强大和丰富的 API，可以自己编写加载器等</p>
+<p>模块化编程：是开发，测试生成互不影响</p>
+<p>###依赖图</p>
+<p>任何情况下，一个文件依赖另一个文件，我们把这种依赖关系称作为依赖图谱</p>
+<h3 id="构建目标-Targets"><a href="#构建目标-Targets" class="headerlink" title="构建目标(Targets)"></a>构建目标(Targets)</h3><p>在webpack 配置中设置 target 的值。</p>
+<p>可以指定是基于什么环境开发的(默认为web)</p>
+<p>配置多个targent</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var path = require(<span class="string">'path'</span>);</div><div class="line">var serverConfig = &#123;</div><div class="line">  target: <span class="string">'node'</span>,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    filename: <span class="string">'lib.node.js'</span></div><div class="line">  &#125;</div><div class="line">  //…</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var clientConfig = &#123;</div><div class="line">  target: <span class="string">'web'</span>, // &lt;=== 默认是 <span class="string">'web'</span>，可省略</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    filename: <span class="string">'lib.js'</span></div><div class="line">  &#125;</div><div class="line">  //…</div><div class="line">&#125;;</div><div class="line"></div><div class="line">module.exports = [ serverConfig, clientConfig ];</div></pre></td></tr></table></figure>
+<h1 id="持续更新中（错误指正，新概念补充）"><a href="#持续更新中（错误指正，新概念补充）" class="headerlink" title="持续更新中（错误指正，新概念补充）"></a>持续更新中（错误指正，新概念补充）</h1><h2 id="参考来源：https-doc-webpack-china-org"><a href="#参考来源：https-doc-webpack-china-org" class="headerlink" title="参考来源：https://doc.webpack-china.org/"></a>参考来源：<a href="https://doc.webpack-china.org/" target="_blank" rel="external">https://doc.webpack-china.org/</a></h2><h2 id="webpack打包笔记（二）（实战练习）"><a href="#webpack打包笔记（二）（实战练习）" class="headerlink" title="webpack打包笔记（二）（实战练习）"></a>webpack打包笔记（二）（实战练习）</h2>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月24日 11:22</p>
+        <p>原始链接： <a class="post-url" href="/Blogs/2017/11/24/webpack打包笔记（一）/" title="webpack打包笔记（一）">//hjm100.cn/Blogs/2017/11/24/webpack打包笔记（一）/</a></p>
+        <footer>
+            <a href="//hjm100.cn/about">
+                <img src="/Blogs/images/logo.jpg" alt="hjm100">
+                hjm100
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hjm100.cn/Blogs&title=《webpack打包笔记（一）》 — 鸿基-梦&pic=//hjm100.cn/Blogsimages/logo.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hjm100.cn/Blogs&title=《webpack打包笔记（一）》 — 鸿基-梦&source=前端分享爱好者，带你感受程序之美，来自鸿基梦的总结，天生爱分享。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hjm100.cn/Blogs" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack打包笔记（一）》 — 鸿基-梦&url=https://hjm100.cn/Blogs&via=//hjm100.cn/Blogs" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hjm100.cn/Blogs" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://hjm100.cn/Blogs" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/Blogs/tags/webpack打包/" class="color5">webpack打包</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#webpack打包笔记（一）（相关概念总结）："><span class="post-toc-text">webpack打包笔记（一）（相关概念总结）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-基本概念理解："><span class="post-toc-text">1.基本概念理解：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#入口-（entry）"><span class="post-toc-text">入口  （entry）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出-（output）"><span class="post-toc-text">输出  （output）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深入输出"><span class="post-toc-text">深入输出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加载器（loader）"><span class="post-toc-text">加载器（loader）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深入加载器"><span class="post-toc-text">深入加载器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插件-（plugins）"><span class="post-toc-text">插件  （plugins）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置"><span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构建目标-Targets"><span class="post-toc-text">构建目标(Targets)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#持续更新中（错误指正，新概念补充）"><span class="post-toc-text">持续更新中（错误指正，新概念补充）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考来源：https-doc-webpack-china-org"><span class="post-toc-text">参考来源：https://doc.webpack-china.org/</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#webpack打包笔记（二）（实战练习）"><span class="post-toc-text">webpack打包笔记（二）（实战练习）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/Blogs/2017/10/13/轻松构建Apache-MySQL-PHP环境/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">轻松构建Apache+MySQL+PHP环境</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <section id="comments">
+            <div id="disqus_thread">
+                <script type="text/javascript">
+                    var disqus_shortname = 'true';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>&copy; 2017 hjm100
+          .版权所有 | 相关设计 <a href="https://gitee.com/hjm100" target="_blank">鸿基梦</a><br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "//hjm100.cn/Blogs",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/Blogs/categories/web/">web</a><a class="category-link" href="/Blogs/categories/习惯/">习惯</a><a class="category-link" href="/Blogs/categories/学习/">学习</a><a class="category-link" href="/Blogs/categories/开发/">开发</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/webpack打包/" style="font-size: 10px;">webpack打包</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 15px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 15px;">开发技术</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/Blogs/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://gitee.com/hjm100">
+                    <i class="fa fa-archive"></i><span>Gitee</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="https://hjm100.cn/about/">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="//github.com/hjm100">
+                    <i class="fa fa-github"></i><span>Github</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/Blogs/tags/angular/" style="font-size: 10px;">angular</a> <a href="/Blogs/tags/webpack打包/" style="font-size: 10px;">webpack打包</a> <a href="/Blogs/tags/web开发技术/" style="font-size: 20px;">web开发技术</a> <a href="/Blogs/tags/工作习惯/" style="font-size: 15px;">工作习惯</a> <a href="/Blogs/tags/开发技术/" style="font-size: 15px;">开发技术</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/Blogs/js/search.js"></script>
+<script src="/Blogs/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/Blogs/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/Blogs/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
